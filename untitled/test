@@ -1,0 +1,9 @@
+print("test")
+
+def printAll():
+    print("all")
+    test = "final thing to print"
+    if test in "final thing to print statement":
+        print(test)
+
+printAll()
