@@ -2,3 +2,16 @@ danton = "De l'audace, encore de l'audace, toujours de l'audace."
 
 print(danton.find('audace', 25))
 print(danton.find('audace', 26))
+
+recruit_1 = 70000
+recruit_2 = 70000
+recruit_you = 80000
+
+''' Each placed recruit gives the agent (recruiter) about 20-30% of profit '''
+profit_1 = recruit_1 * 0.20 + recruit_2 * 0.20
+profit_2 = recruit_you * 0.30
+if profit_1 > profit_2:
+    print(profit_1)
+    print(profit_2)
+else:
+    print(profit_2)
