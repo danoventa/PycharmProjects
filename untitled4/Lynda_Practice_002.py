@@ -3,7 +3,8 @@ __author__ = 'Executor'
 class inclusive_range:
     def __init__(self, *args):
         numargs = len(args)
-        if numargs < 1: raise TypeError('requires lest 1')
+        if numargs < 1:
+            raise TypeError('requires lest 1')
         elif numargs == 1:
             self.stop = args[0]
             self.start = 0
@@ -13,7 +14,8 @@ class inclusive_range:
             self.step = 1
         elif numargs == 3:
             (self.start, self.stop, self.step) = args
-        else: raise TypeError('we expect moar! Only give {}'. format(numargs))
+        else:
+            raise TypeError('we expect moar! Only give {}'. format(numargs))
 
     def __iter__(self):
         i = self.start
