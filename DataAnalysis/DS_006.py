@@ -22,3 +22,4 @@ from IPython.display import YouTubeVideo
 YouTubeVideo('xGbpuFNR1ME')
 YouTubeVideo('4EXNedimDMs')
 
+''' stupid thing doesn't work!'''
