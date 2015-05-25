@@ -78,3 +78,5 @@ np.savetxt('mytext.txt', art, delimiter=',')
 arp = np.loadtxt('mytext.txt', delimiter=',')
 print(art)
 print(arp)
+
+plt.show()
