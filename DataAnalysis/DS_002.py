@@ -2,6 +2,7 @@ __author__ = 'Executor'
 
 import numpy as np
 
+
 print(5/2)
 
 arr1 = np.array([[1, 2, 3, 4], [8, 9, 10, 11]])
@@ -41,3 +42,5 @@ print(arr_2d[2])
 arr2d = np.zeros((10, 10))
 print(arr2d)
 
+theNew = np.array(([1, 2, 3], [2, 3, 4]))
+print(theNew)
