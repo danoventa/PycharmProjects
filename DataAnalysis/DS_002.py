@@ -2,6 +2,7 @@ __author__ = 'Executor'
 
 import numpy as np
 
+
 print(5/2)
 
 arr1 = np.array([[1, 2, 3, 4], [8, 9, 10, 11]])
@@ -41,6 +42,10 @@ print(arr_2d[2])
 arr2d = np.zeros((10, 10))
 print(arr2d)
 
+<<<<<<< HEAD
+theNew = np.array(([1, 2, 3], [2, 3, 4]))
+print(theNew)
+=======
 print()
 arr = np.arange(50).reshape((10, 5))
 print(arr)
@@ -72,3 +77,4 @@ website = 'http://docs.scipy.org/numpy/reference/ufuncs.html#available-ufuncs'
 wb.open(website)
 '''
 
+>>>>>>> 87d797bbc4a0c2ffafdfe5aa37d3f251bd297257
