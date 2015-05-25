@@ -79,4 +79,8 @@ arp = np.loadtxt('mytext.txt', delimiter=',')
 print(art)
 print(arp)
 
+<<<<<<< HEAD
 plt.show()
+=======
+plt.show()
+>>>>>>> 28683e7ae6441789f38e1ea027b06c1224178552

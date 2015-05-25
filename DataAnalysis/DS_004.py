@@ -19,3 +19,5 @@ ww2d  = ww2.to_dict()
 print(ww2)
 print(ww2d)
 
+print(ww2 + ww2)
+
