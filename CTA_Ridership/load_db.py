@@ -10,9 +10,9 @@ month_beginning = 'month_beginning'
 on_street = 'on_street'
 routes = 'routes'
 
-con = db.connect("cta_boardings.db")
+con = db.connect("cta_ridership.db")
 cur = con.cursor()
-cur.execute('''CREATE TABLE boardings (stop_id INTEGER,
+cur.execute('''CREATE TABLE Ridership (stop_id INTEGER,
                                        alightings REAL,
                                        boardings REAL,
                                        location BLOB,
@@ -22,11 +22,11 @@ cur.execute('''CREATE TABLE boardings (stop_id INTEGER,
                                        on_street TEXT,
                                        routes TEXT);''')
 
-with open('CTA_Ridership.csv','rt') as fin:
-    dr = csv.DictReader(fin)
-    to_db = [(i[stop_id], i[alightings], i[boardings], i[location], i[cross_street], i[daytype], i[month_beginning], i[on_street], i[routes]) for i in dr]
+with open('CTA_Ridership.csv','rt') as f:
+    dr = csv.DictReader(f)
+    to_db = [(row[stop_id], row[alightings], row[boardings], row[location], row[cross_street], row[daytype], row[month_beginning], row[on_street], row[routes]) for row in dr]
 
-cur.executemany('''INSERT INTO boardings (stop_id, alightings, boardings, location, cross_street, daytype, month_beginning, on_street, routes)
+cur.executemany('''INSERT INTO ridership (stop_id, alightings, boardings, location, cross_street, daytype, month_beginning, on_street, routes)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);''', to_db)
 
 con.commit()
