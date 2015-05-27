@@ -14,6 +14,7 @@ soup = bs(c)
 summary = soup.find('div', {'class':'list-land', 'id':'content'})
 tables = summary.find_all('table')
 
+
 data = []
 rows = tables[0].findAll('tr')
 
