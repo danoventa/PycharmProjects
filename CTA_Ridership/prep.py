@@ -26,10 +26,12 @@ def extract_location(blob):
 test1 = query_to_df('''SELECT stop_id, location FROM Ridership;''')
 print(test1)
 
+test3 = query_to_df('''Select stop_id from Ridership;''')
+
+
 loc = 'location'
 max = Decimal(0.0)
 
-'''
 for row_x in test1[loc]:
     loc_x = extract_location(row_x)
     print('still runnig')
@@ -41,7 +43,9 @@ for row_x in test1[loc]:
             print(max)
 
 print('max: ', max)
-'''
+
+
+
 
 
 

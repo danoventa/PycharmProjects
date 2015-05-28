@@ -9,6 +9,7 @@ print(obj)
 print(obj.index)
 
 ww2 = Series([800, 400, 300, 200, 430], index=['USSR', 'Germany', 'China', 'Japan', 'USA'])
+ww3 = Series([800, 400, 300, 200, 430, 500], index=['USSR', 'Germany', 'China', 'Japan', 'USA', 'Jamaica'])
 print(ww2)
 
 # check casualties
@@ -19,5 +20,6 @@ ww2d  = ww2.to_dict()
 print(ww2)
 print(ww2d)
 
-print(ww2 + ww2)
+ww2.update(([300], index='Jamaica'))
+print(ww2)
 
