@@ -5,16 +5,15 @@ import seaborn as sns
 import matplotlib
 import numpy as np
 import bokeh as bo
-
 import bisect as bi
 import bintrees as bt
+import _thread
 
 from matplotlib.pyplot import plot
 from decimal import Decimal
 from geopy.distance import vincenty
 from pandas import DataFrame
 from queue import Queue
-from threading import Thread
 
 
 
@@ -35,12 +34,15 @@ print(test1)
 
 test3 = query_to_df('''Select stop_id from Ridership;''')
 
-
 loc = 'location'
 max = Decimal(0.0)
 visited = {}
 x_pos = -1
 y_pos = 0
+
+def calculate_distance (x, y):
+    distance = vincenty(x, y).miles.real
+    return distance
 
 start_time = time.time()
 for row_x in test1[loc]:
@@ -55,19 +57,13 @@ for row_x in test1[loc]:
     for row_y in test1[loc]:
         if  y_pos > x_pos:
             loc_y = extract_location(row_y)
-            distance = vincenty(loc_x, loc_y).miles.real
+            distance = _thread.start_new_thread(calculate_distance, (loc_x, loc_y))
             if distance > max:
                 max = distance
                 print(max)
         y_pos += 1
 
 print('max: ', max)
-
-
-
-
-
-
 
 
 
