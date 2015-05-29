@@ -50,7 +50,7 @@ def calculate_max(px, py, max_obj):
         max_obj.max_value(new_max=distance)
 
 max = Max_Value()
-
+start_time = time.time()
 for row_x in test1[loc]:
     loc_x = extract_location(row_x)
     x_p += 1
@@ -65,7 +65,6 @@ for row_x in test1[loc]:
 
 ''' don't particularly understand this purpose.'''
 main_thread = th.currentThread()
-start_time = time.time()
 for t in th.enumerate():
     if t is not main_thread:
         t.join()

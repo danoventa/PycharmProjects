@@ -45,11 +45,11 @@
       <file leaf-file-name="actual_threading.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/actual_threading.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7413793">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.61206895">
+              <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
               <folding>
                 <element signature="e#24#43#0" expanded="true" />
-                <marker date="1432931969000" expanded="true" signature="485:524" placeholder="SELECT stop_..Ridership..." />
+                <marker date="1432932069000" expanded="true" signature="485:524" placeholder="SELECT stop_..Ridership..." />
               </folding>
             </state>
           </provider>
@@ -522,7 +522,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1362" height="745" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -796,11 +796,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/actual_threading.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7413793">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.61206895">
+          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
           <folding>
             <element signature="e#24#43#0" expanded="true" />
-            <marker date="1432931969000" expanded="true" signature="485:524" placeholder="SELECT stop_..Ridership..." />
+            <marker date="1432932069000" expanded="true" signature="485:524" placeholder="SELECT stop_..Ridership..." />
           </folding>
         </state>
       </provider>
