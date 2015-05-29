@@ -7,7 +7,6 @@ import time
 
 from geopy.distance import vincenty
 from decimal import Decimal
-from queue import Queue
 from threading import Thread
 
 con = db.connect("cta_ridership.db")
