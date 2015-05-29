@@ -47,20 +47,17 @@ for row_x in test1[loc]:
     loc_x = extract_location(row_x)
     x_pos += 1
     y_pos = 0
-    end_time = time.time()
-    run_time = end_time.real - start_time.real
-    start_time = time.time()
-    print(run_time)
-
     for row_y in test1[loc]:
         if  y_pos > x_pos:
             loc_y = extract_location(row_y)
             distance = vincenty(loc_x, loc_y).miles.real
             if distance > max:
                 max = distance
-                print(max)
         y_pos += 1
 
+
+total_time =  time.time().real - start_time.real
+print('total elapsed time: ', total_time)
 print('max: ', max)
 
 

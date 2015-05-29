@@ -43,7 +43,7 @@ y_pos = 0
 def calculate_distance (x, y):
     distance = vincenty(x, y).miles.real
     return distance
-
+complete_time = time.time()
 start_time = time.time()
 for row_x in test1[loc]:
     loc_x = extract_location(row_x)
@@ -62,7 +62,9 @@ for row_x in test1[loc]:
                 max = distance
                 print(max)
         y_pos += 1
+total_time =  time.time().real - complete_time.real
 
+print('total elapsed time: ', total_time)
 print('max: ', max)
 
 
