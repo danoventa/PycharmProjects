@@ -13,8 +13,6 @@ from matplotlib.pyplot import plot
 from decimal import Decimal
 from geopy.distance import vincenty
 from pandas import DataFrame
-from queue import Queue
-from threading import Thread
 
 
 
