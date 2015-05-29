@@ -1,20 +1,9 @@
 import sqlite3 as db
 import pandas as pd
 import time
-import seaborn as sns
-import matplotlib
-import numpy as np
-import bokeh as bo
 
-import bisect as bi
-import bintrees as bt
-
-from matplotlib.pyplot import plot
 from decimal import Decimal
 from geopy.distance import vincenty
-from pandas import DataFrame
-
-
 
 con = db.connect("cta_ridership.db")
 cur = con.cursor()
