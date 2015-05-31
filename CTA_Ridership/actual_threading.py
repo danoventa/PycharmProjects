@@ -57,13 +57,12 @@ for row_x in test1[loc]:
     loc_x = extract_location(row_x)
     x_p += 1
     y_p = 0
-    for i in range(num_threads):
-        for row_y in test1[loc]:
-            if  y_p > x_p:
-                loc_y = extract_location(row_y)
-                t = Thread(target=calculate_max, args=(loc_x, loc_y, max))
-                t.start()
-            y_p += 1
+    for row_y in test1[loc]:
+        if  y_p > x_p:
+            loc_y = extract_location(row_y)
+            t = Thread(target=calculate_max, args=(loc_x, loc_y, max))
+            t.start()
+        y_p += 1
 
 ''' don't particularly understand this purpose.'''
 main_thread = th.currentThread()
