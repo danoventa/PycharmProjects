@@ -15,7 +15,7 @@ from bokeh.charts import show, output_file
 titanic_df = pd.read_csv('train.csv')
 #print(tit_d.head())
 
-#tit_d.info()
+#titanic_df.info()
 
 sns.factorplot('Sex', data=titanic_df, hue='Pclass')
 #plt.show()
