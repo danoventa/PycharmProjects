@@ -47,7 +47,9 @@ class Max_Value(object):
 def calculate_max(px, py, max_obj):
     distance = vincenty(px, py).miles.real
     if distance > max_obj.value:
+
         max_obj.max_value(new_max=distance)
+        print(max_obj.value)
 
 max = Max_Value()
 start_time = time.time()
@@ -69,6 +71,6 @@ for t in th.enumerate():
     if t is not main_thread:
         t.join()
 
-total_time =  time.time().real - start_time.real
+total_time = time.time().real - start_time.real
 print("Total Time: " + total_time)
 print("Max Value: " + max.max_value)
