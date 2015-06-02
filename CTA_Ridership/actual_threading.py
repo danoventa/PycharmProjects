@@ -7,7 +7,6 @@ import time
 
 from geopy.distance import vincenty
 from decimal import Decimal
-from queue import Queue
 from threading import Thread
 
 con = db.connect("cta_ridership.db")
@@ -51,13 +50,15 @@ def calculate_max(px, py, max_obj):
         max_obj.max_value(new_max=distance)
         print(max_obj.value)
 
+num_threads = 7
 max = Max_Value()
 start_time = time.time()
+
+
 for row_x in test1[loc]:
     loc_x = extract_location(row_x)
     x_p += 1
     y_p = 0
-
     for row_y in test1[loc]:
         if  y_p > x_p:
             loc_y = extract_location(row_y)
