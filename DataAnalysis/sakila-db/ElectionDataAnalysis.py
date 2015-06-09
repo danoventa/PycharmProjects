@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style('whitegrid')
 
-import requests
+''' Didn't need some of the other imports, since using a direct csv reader '''
 
 ''' no need to do strinio since we're not working with python 2.7 '''
 
@@ -40,3 +40,4 @@ plt.show()
 poll_avg = pd.concat([avg, std], axis=1)
 poll_avg.columns = ['Average', 'STD']
 print(poll_avg)
+
