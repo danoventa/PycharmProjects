@@ -41,3 +41,11 @@ poll_avg = pd.concat([avg, std], axis=1)
 poll_avg.columns = ['Average', 'STD']
 print(poll_avg)
 
+source.plot(x = 'End Date', y=['Obama', 'Romney', 'Undecided'], linestyle='', marker='o')
+plt.show()
+
+from datetime import datetime
+
+source['Difference'] = (source.Obama - source.Romney)/100
+source.head()
+
