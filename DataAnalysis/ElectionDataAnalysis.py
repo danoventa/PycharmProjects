@@ -47,5 +47,34 @@ plt.show()
 from datetime import datetime
 
 source['Difference'] = (source.Obama - source.Romney)/100
-source.head()
+print(source.head())
+
+poll_df = source.groupby(['Start Date'], as_index=False).mean()
+print(poll_df.head())
+
+poll_df.plot('Start Date', 'Difference', figsize=(12, 4), marker='o', linestyle='-', color='purple')
+plt.show()
+
+row_in=0
+xlimit = []
+
+for date in poll_df['Start Date']:
+    if date[0:7] == '2012-10':
+        xlimit.append(row_in)
+        row_in += 1
+    else:
+        row_in += 1
+
+print(min(xlimit))
+print(max(xlimit))
+
+poll_df.plot('Start Date', 'Difference', figsize=(12, 4), marker='o', linestyle='-', color='purple', xlim=(329,356))
+# dabate 1
+plt.axvline(x=329+2, linewidth=4, color='grey')
+# debate 2
+plt.axvline(x=329+10, linewidth=4, color='grey')
+#debate 3
+plt.axvline(x=329+21, linewidth=4, color='grey')
+
+plt.show()
 
