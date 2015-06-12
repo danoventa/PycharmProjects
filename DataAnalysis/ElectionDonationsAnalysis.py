@@ -9,4 +9,5 @@ import seaborn as sns
 sns.set_style('whitegrid')
 
 
-Election_Donor_Data.csv
+donor_df = pd.read_csv('Election_Donor_Data.csv', low_memory=False)
+print(donor_df.info())
