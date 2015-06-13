@@ -9,7 +9,7 @@ import seaborn as sns
 sns.set_style('whitegrid')
 
 
-donor_df = pd.read_csv('Election_Donor_Data.csv', low_memory=False)
+donor_df = pd.read_csv('/Users/Noventa/Election_Donor_Data.csv', low_memory=False)
 print(donor_df.info())
 
 donor_df.head()
@@ -28,10 +28,13 @@ print(top_donor)
 
 top_donor = top_donor[top_donor > 0]
 
-top_donor.counts().head(10)
+
+top_donor.sort()
+top_donor.head()
 
 com_don = top_donor[top_donor < 2500]
 
 com_don.hist(bins=100)
 
+plt.show()
 
