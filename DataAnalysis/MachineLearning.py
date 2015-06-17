@@ -42,3 +42,33 @@ boston_df.head()
 sns.lmplot('RM', 'Price', data=boston_df)
 plt.show()
 
+X = boston_df.RM
+
+X = np.vstack(boston_df.RM)
+
+print(X.shape)
+
+Y = boston_df.Price
+
+X = np.array([value, 1] for value in X)
+
+m, b = np.linalg.lstsq(X, Y)[0]
+
+plt.plot(boston_df.RM, boston_df.Price, 'o')
+
+x = boston_df.RM
+
+plt.plot(x, m*x + b, 'r', label='Best Fit Line')
+
+plt.show()
+
+result = np.linalg.lstsq(X, Y)
+
+error_total = result[1]
+rmse = np.sqrt(error_total/len(X))
+
+print('The root mean square error was %.2f' %rmse)
+
+import sklearn
+from sklearn.linear_model import LinearRegression
+
