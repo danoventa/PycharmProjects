@@ -72,3 +72,19 @@ print('The root mean square error was %.2f' %rmse)
 import sklearn
 from sklearn.linear_model import LinearRegression
 
+lreg = LinearRegression()
+''' Linear Regressions() is an estimator '''
+
+X_multi = boston_df.drop('Price', 1)
+Y_target = boston_df.Price
+
+lreg.fit(X_multi, Y_target)
+print('The estimated intercept coefficient is %.2f ' %lreg.intercept_)
+print('the number of coefficients used was %d' %len(lreg.coef))
+
+coeff_df = DataFrame(boston_df.columns)
+coeff_df.columns = ['Features']
+
+coeff_df['Coefficient Estimate'] = pd.Series(lreg.coef_)
+print(coeff_df)
+
