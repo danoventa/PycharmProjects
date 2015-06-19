@@ -60,8 +60,62 @@ sns.factorplot('occupation', data=df, hue='Had_Affair', palette='coolwarm')
 
 
 sns.factorplot('affairs', data=df, hue='Had_Affair', palette='coolwarm')
-
+plt.show()
 
 sns.factorplot('occupation_husb', data=df, hue='Had_Affair', palette='coolwarm')
 plt.show()
+
+occ_dummies = pd.get_dummies(df['occupation'])
+hus_occ_dummies = pd.get_dummies(df['occupation_husb'])
+
+print(occ_dummies.head())
+
+occ_dummies.columns = ['occ1', 'occ2', 'occ3', 'occ4', 'occ5', 'occ6']
+hus_occ_dummies.columns = ['hocc1', 'hocc2', 'hocc3', 'hocc4', 'hocc5', 'hocc6']
+
+X = df.drop(['occupation', 'occupation_husb', 'Had_Affair'], axis=1)
+dummies=pd.concat([occ_dummies, hus_occ_dummies], axis=1)
+print(X.head())
+print(dummies.head())
+
+X = pd.concat([X, dummies], axis=1)
+print(X.head())
+
+Y = df.Had_Affair
+
+print(Y.head())
+
+X = X.drop('occ1', axis=1 )
+X = X.drop('hocc1', axis=1 )
+
+X = X.drop('affairs', axis=1)
+
+print(X.head())
+
+print(Y.head())
+
+Y = np.ravel(Y)
+
+print(Y)
+
+log_model = LogisticRegression()
+
+log_model.fit(X, Y)
+
+log_model.score(X, Y)
+
+Y.mean()
+
+coeff_df = DataFrame(zip(X.columns, np.transpose(log_model.coef_)))
+
+print(coeff_df)
+
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
+
+log_model2 = LogisticRegression()
+
+log_model2.fit(X_train, Y_train)
+
+class_predict = log_model2.predict(X_test)
+print(metrics.accuracy_score(Y_test, class_predict))
 
