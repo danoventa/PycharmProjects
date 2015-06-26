@@ -57,3 +57,28 @@ print(metrics.accuracy_score(Y_test, Y_pred))
 
 from sklearn.neighbors import KNeighborsClassifier
 
+knn = KNeighborsClassifier(n_neighbors=6)
+
+knn.fit(X_train, Y_train)
+Y_pred = knn.predict(X_test)
+print(metrics.accuracy_score(Y_test, Y_pred))
+
+knn = KNeighborsClassifier(n_neighbors=1)
+knn.fit(X_train, Y_train)
+Y_pred = knn.predict(X_test)
+print(metrics.accuracy_score(Y_test, Y_pred))
+
+k_range = range(1, 21)
+
+accuracy = []
+
+for k in k_range:
+    knn = KNeighborsClassifier(n_neighbors=k)
+    knn.fit(X_train, Y_train)
+    Y_pred = knn.predict(X_test)
+
+    accuracy.append(metrics.accuracy_score(Y_test, Y_pred))
+
+plt.plot(k_range, accuracy)
+plt.xlabel('K value for KNN')
+plt.ylabel('Testing Accuracy')
