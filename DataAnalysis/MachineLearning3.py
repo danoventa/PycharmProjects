@@ -69,7 +69,7 @@ for i, clf in enumerate((svc, lin_svc, rbf_svc, poly_svc)):
 
     Z = Z.reshape(xx.shape)
 
-    plt.contourf(xx, yy, Z, cmap=plt.cm.terrain, alpja=0.5, linewidths = 0)
+    plt.contourf(xx, yy, Z, cmap=plt.cm.terrain, alpja=0.5, linewidth = 0)
     plt.scatter(X[:,0], X[:, 1], c=Y, cmap=plt.cm.Dark2)
 
     plt.xlabel('Sepal length')
@@ -79,7 +79,7 @@ for i, clf in enumerate((svc, lin_svc, rbf_svc, poly_svc)):
 
     plt.xticks(())
     plt.yticks(())
-    plt.title(titles[i])
+    plt.title(titles[i-1])
 
 plt.show()
 
